@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WebSocketApp" ng-controller="WebSocketAppCtrl">
+<head>
+    <title>node.js</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" defer></script>
+    <script src="bower_components/ng-websocket/ng-websocket.js" defer></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <div id="chat">
+        <div id="output">
+            <div ng-repeat="message in messages track by $index">
+                {{message.from}} : {{message.message}}
+            </div>
+        </div>
+        <div id="send">
+            <input type="text" size="100" ng-model="data"><br>
+            <input type="button" value="Send Text" ng-click="sendMessage()">
+        </div>
+    </div>
+    
+    
+</body>
+</html>

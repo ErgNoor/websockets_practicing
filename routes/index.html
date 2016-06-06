@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="WebSocketApp" ng-controller="WebSocketAppCtrl">
+<head>
+    <title>node.js</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js" defer></script>
+    <script src="bower_components/angular-websocket/angular-websocket.js"></script>
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <div id="error" ng-show="auth_error">
+        <span>Sorry, authorized wasn't success</span>
+    </div>
+    <form id="loginform" ng-hide="authorized">
+        <input id="login" placeholder="Логин" ng-model="login"><br>
+        <input id="password" placeholder="Пароль" ng-model="password"><br>
+        <button id="start" ng-click="sendAuth()">Войти</button>
+        <div><span>Если пользователь не зарегистрирован, то аккаунт будет создан</span></div>
+    </form>
+</body>
+</html>
